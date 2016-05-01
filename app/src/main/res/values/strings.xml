@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Alarmz</string>
+    <string name="toolbarText">Nightwaker</string>
+    <string name="toolbarSubtitle">don\'t touch that phone!</string>
+    <string name="menu_1">Settings</string>
+    <string name="settings">Settings</string>
+</resources>
