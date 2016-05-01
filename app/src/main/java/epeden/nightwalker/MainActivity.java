@@ -1,11 +1,18 @@
 package epeden.nightwalker;
 
+import android.app.AlarmManager;
+import android.app.IntentService;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -13,16 +20,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TimePicker;
+import android.widget.Toast;
+import com.parse.ParseObject;
 
 import java.sql.Time;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
-    private Time alarm_time;
     private SensorManager sm;
     private Sensor acc_sensor;
     Intent dash_intent;
     Intent settings_intent;
+
+    private AlarmManager alarmMgr;
+    private TimePicker time_picker;
+    private PendingIntent alarmIntent;
 
 
 
@@ -43,9 +57,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         sm = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         acc_sensor = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
+
         if (acc_sensor != null) {
             sm.registerListener(this, acc_sensor, 1000000);
         }
+
+
+        alarmMgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
+        time_picker = (TimePicker) findViewById(R.id.timePicker);
+
+
 
         Button dash_button = (Button) findViewById(R.id.dash_button);
         Button start_button = (Button) findViewById(R.id.start_button);
@@ -56,10 +77,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 dashButtonPushed(v);
             }
         });
+
         start_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startButtonPushed(v);
+                startAlarm(v);
             }
         });
 
@@ -73,21 +95,33 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         return true;
     }
 
-    public void setAlarmTime(Time t) {
-        alarm_time = t;
-    }
 
     public void dashButtonPushed(View v) {
         dash_intent = new Intent (this,DashboardActivity.class);
         startActivity(dash_intent);
     }
-
-    public void startButtonPushed(View v) {
-//        start_intent = new Intent (this, StartActivity.class);
-//        startActivity(start_intent);
-
-
+    public void onSettingsClicked(MenuItem item) {
+        System.out.println("YEAH YOU GONNA LAUNCH SETTINGS!");
+        settings_intent = new Intent (this,DashboardActivity.class);
+        startActivity(settings_intent);
     }
+
+    public void startAlarm(View view) {
+
+        int hour = time_picker.getHour();
+        int minute = time_picker.getMinute();
+        Intent intent = new Intent(this, NotificationActivity.class);
+        alarmIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+
+
+        int time = hour*3600000 + minute*60000;
+        alarmMgr.setExact(AlarmManager.RTC_WAKEUP, time, alarmIntent);
+
+        Intent i = new Intent(this, SleepService.class);
+        i.setAction("time: " + time);
+        startService(i);
+    }
+
 
 
 
@@ -101,9 +135,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     }
 
-    public void onSettingsClicked(MenuItem item) {
-        System.out.println("YEAH YOU GONNA LAUNCH SETTINGS!");
-        settings_intent = new Intent (this,DashboardActivity.class);
-        startActivity(settings_intent);
-    }
+
 }
+
