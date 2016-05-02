@@ -155,6 +155,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         Intent i = new Intent(this, SleepService.class);
         startService(i);
 
+        Intent i2 = new Intent(this, SleepingActivity.class);
+        startActivity(i2);
+
 //        Intent myIntent = new Intent(MainActivity.this, AlarmReceiver.class);
 //        pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, myIntent, 0);
 //
