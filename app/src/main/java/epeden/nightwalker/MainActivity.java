@@ -134,18 +134,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         startActivity(dash_intent);
     }
     public void onSettingsClicked(MenuItem item) {
-        System.out.println("YEAH YOU GONNA LAUNCH SETTINGS!");
         settings_intent = new Intent (this,SettingsActivity.class);
         startActivity(settings_intent);
     }
 
     public void startAlarm(View view) {
-
         int hour = time_picker.getHour();
         int minute = time_picker.getMinute();
         Intent intent = new Intent(this, NotificationActivity.class);
         notificationIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
-
 
         int time = hour*3600000 + minute*60000;
         alarmMgr.setExact(AlarmManager.RTC_WAKEUP, time, notificationIntent);
