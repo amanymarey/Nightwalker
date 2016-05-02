@@ -24,4 +24,17 @@ public class WakeEvent extends SugarRecord {
     public void setAlarm(Alarm alarm){
         this.alarm = alarm;
     }
+
+
+    public Date getStartTime() {
+        return startTime;
+    }
+    public Date getEndTime() {
+        return endTime;
+    }
+
+
+    public Alarm getAlarm() {
+        return alarm;
+    }
 }

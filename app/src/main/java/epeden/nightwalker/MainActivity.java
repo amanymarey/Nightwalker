@@ -23,11 +23,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
 import org.w3c.dom.Text;
 
 import java.sql.Time;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
@@ -38,12 +38,24 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     private AlarmManager alarmMgr;
     private TimePicker time_picker;
-    private PendingIntent alarmIntent;
+    private static MainActivity inst;
+    private PendingIntent pendingIntent;
+
+    private PendingIntent notificationIntent;
     public Settings settings;
     private TextView settingsTestTextViewLimit;
     private TextView settingsTestTextViewDuration;
 
 
+    public static MainActivity instance() {
+        return inst;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        inst = this;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -132,18 +144,34 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         int hour = time_picker.getHour();
         int minute = time_picker.getMinute();
         Intent intent = new Intent(this, NotificationActivity.class);
-        alarmIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+        notificationIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
 
 
         int time = hour*3600000 + minute*60000;
-        alarmMgr.setExact(AlarmManager.RTC_WAKEUP, time, alarmIntent);
+        alarmMgr.setExact(AlarmManager.RTC_WAKEUP, time, notificationIntent);
 
+        Date date = new Date();
+        date.setTime(time);
+
+        Alarm a = new Alarm(date,0);
+        a.save();
         Intent i = new Intent(this, SleepService.class);
-        i.setAction("time: " + time);
         startService(i);
+
+//        Intent myIntent = new Intent(MainActivity.this, AlarmReceiver.class);
+//        pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, myIntent, 0);
+//
+//        int time = hour*3600000 + minute*60000;
+//        alarmMgr.set(AlarmManager.RTC, time, pendingIntent);
+//
+//        Date date = new Date();
+//        date.setTime(time);
+//
+//        Alarm a = new Alarm(date,0);
+//        a.save();
+//        Intent i = new Intent(this, SleepService.class);
+//        startService(i);
     }
-
-
 
 
     @Override

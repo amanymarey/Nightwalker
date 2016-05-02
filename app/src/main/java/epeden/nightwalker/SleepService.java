@@ -10,6 +10,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.IBinder;
+import android.os.SystemClock;
 
 import java.util.Calendar;
 
@@ -18,7 +19,6 @@ public class SleepService extends Service implements SensorEventListener {
     Intent local;
     private SensorManager sm;
     private Sensor acc_sensor;
-    NightRecord nightRecord;
     BroadcastReceiver br;
 
 
@@ -29,9 +29,6 @@ public class SleepService extends Service implements SensorEventListener {
         if (acc_sensor != null) {
             sm.registerListener(this, acc_sensor, 1000000);
         }
-
-        nightRecord = new NightRecord();
-
     }
 
     @Override
@@ -50,7 +47,11 @@ public class SleepService extends Service implements SensorEventListener {
         float f = (x*x) + (y*y) + (z*z);
         f = (float) Math.sqrt(f);
 
-        nightRecord.addPoint(System.currentTimeMillis(), f);
+
+        Alarm a = Alarm.findById(Alarm.class, 1);
+        Calendar c = Calendar.getInstance();
+        WakeEvent wakeEvent = new WakeEvent(c.getTime(), c.getTime(), a);
+        wakeEvent.save();
     }
 
     @Override
