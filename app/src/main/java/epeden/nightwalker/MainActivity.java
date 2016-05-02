@@ -96,12 +96,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         dash_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 dashButtonPushed(v);
             }
         });
         start_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startAlarm(v);
             }
         });
