@@ -20,8 +20,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.sql.Time;
 import java.util.Calendar;
@@ -36,7 +39,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private AlarmManager alarmMgr;
     private TimePicker time_picker;
     private PendingIntent alarmIntent;
-
+    public Settings settings;
+    private TextView settingsTestTextViewLimit;
+    private TextView settingsTestTextViewDuration;
 
 
     @Override
@@ -44,9 +49,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        settings = findOrCreateSettings();
+        settingsTestTextViewLimit = (TextView) findViewById(R.id.settingsTestTextViewLimit);
+        settingsTestTextViewLimit.setText("Snooze Limit: " + settings.getSnoozeLimit());
+        settingsTestTextViewDuration = (TextView) findViewById(R.id.settingsTestTextViewDuration);
+        settingsTestTextViewDuration.setText("Snooze Duration: " + settings.getSnoozeDuration());
+
         // Find the toolbar view inside the activity layout
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        // Sets the Toolbar to act as the ActionBar for this Activity window (for compatibilty with old android)
+        // Sets the Toolbar to act as the ActionBar for this Activity window (for compatibility with old android)
         // Make sure the toolbar exists in the activity and is not null
         setSupportActionBar(toolbar);
 
@@ -86,6 +97,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     }
 
+    public Settings findOrCreateSettings(){
+        Settings foundSettings = Settings.findById(Settings.class, 1);
+        if (foundSettings != null){
+            return foundSettings;
+        } else {
+            Settings newSettings = new Settings(1, 5);
+            newSettings.save();
+            return newSettings;
+        }
+    }
+
     // Menu icons are inflated just as they were with actionbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -101,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
     public void onSettingsClicked(MenuItem item) {
         System.out.println("YEAH YOU GONNA LAUNCH SETTINGS!");
-        settings_intent = new Intent (this,DashboardActivity.class);
+        settings_intent = new Intent (this,SettingsActivity.class);
         startActivity(settings_intent);
     }
 

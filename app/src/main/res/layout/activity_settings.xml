@@ -10,5 +10,59 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:text="Back"
+        android:id="@+id/back_button"
+        android:layout_alignParentBottom="false"
+        android:minHeight="30dp"
+        android:minWidth="60dp"
+        android:layout_alignParentTop="true"
+        android:background="#f1e956"
+        android:clickable="true"
+        android:textSize="20dp"
+        android:onClick="backButtonPushed" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:text="Set Maximum Number of Snoozes"
+        android:id="@+id/snoozeLimitTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/snoozeLimitSeekBar"
+        android:layout_below="@+id/snoozeLimitTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:max="5"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/snoozeLimitSeekBar"
+        android:text="Set Snooze Time"
+        android:id="@+id/snoozeDurationTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/snoozeDurationSeekBar"
+        android:layout_below="@+id/snoozeDurationTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:max="5"/>
+
+
+
 
 </RelativeLayout>

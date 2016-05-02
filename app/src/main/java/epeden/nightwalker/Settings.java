@@ -24,4 +24,12 @@ public class Settings extends SugarRecord {
     public void setSnoozeDuration(int snoozeDuration){
         this.snoozeDuration = snoozeDuration;
     }
+
+    public int getSnoozeLimit(){
+        return this.snoozeLimit;
+    }
+
+    public int getSnoozeDuration(){
+        return this.snoozeDuration;
+    }
 }
