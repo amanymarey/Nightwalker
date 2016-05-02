@@ -36,7 +36,7 @@
         android:layout_marginBottom="32dp" />
 
     <SeekBar
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/snoozeLimitSeekBar"
         android:layout_below="@+id/snoozeLimitTextView"
@@ -54,7 +54,7 @@
         android:layout_marginBottom="32dp" />
 
     <SeekBar
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/snoozeDurationSeekBar"
         android:layout_below="@+id/snoozeDurationTextView"
