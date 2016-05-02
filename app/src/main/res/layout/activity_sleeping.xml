@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="You&apos;re picked up your phone 0 times."
+        android:text="You&apos;ve picked up your phone 0 times."
         android:id="@+id/sleep_counter"
         android:layout_above="@+id/end_sleep_button"
         android:layout_centerHorizontal="true"
