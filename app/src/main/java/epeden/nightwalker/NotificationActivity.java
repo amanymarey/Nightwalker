@@ -23,6 +23,7 @@ public class NotificationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
+        System.out.println("just created the notification activity, should start playing music...");;
         alarmMgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
 
         Uri alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);

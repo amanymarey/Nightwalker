@@ -103,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         start_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 startAlarm(v);
             }
         });
@@ -142,10 +141,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void startAlarm(View view) {
         int hour = time_picker.getHour();
         int minute = time_picker.getMinute();
-        Intent intent = new Intent(this, NotificationActivity.class);
+        Intent intent = new Intent(MainActivity.this, NotificationActivity.class);
         notificationIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
 
         int time = hour*3600000 + minute*60000;
+        System.out.println(time);
         alarmMgr.setExact(AlarmManager.RTC_WAKEUP, time, notificationIntent);
 
         Date date = new Date();
