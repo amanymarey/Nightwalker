@@ -34,10 +34,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
+        android:text="Pickup Count: "
         android:id="@+id/dashboard_info"
         android:layout_below="@+id/toolbar"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#e23f3f"
+        android:textStyle="bold" />
 
     <include layout="@layout/timeline_main"
         android:layout_below="@+id/dashboard_info"

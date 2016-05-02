@@ -71,7 +71,7 @@ public class DashboardActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(formattedDate);
 //        getSupportActionBar().setSubtitle(formattedDate);
 
-        String s = "Pickup count: "+count+"";
+        String s = "Pickup Count: "+count+"";
         dashboardInfo.setText(s);
 
         initView();
