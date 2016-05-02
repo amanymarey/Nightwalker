@@ -39,4 +39,9 @@ public class Alarm extends SugarRecord {
     public void snooze() {
         snoozeCount++;
     }
+
+    public String getID() {
+        return "";
+    }
+
 }

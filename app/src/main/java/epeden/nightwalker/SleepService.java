@@ -81,5 +81,5 @@ public class SleepService extends Service implements SensorEventListener {
         WakeEvent wakeEvent = new WakeEvent(c.getTime(), c.getTime(), a);
         wakeEvent.save();
     }
-    
+
 }

@@ -19,6 +19,8 @@ import android.widget.TextView;
 import com.vipul.hp_hp.timelineview.TimelineView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class DashboardActivity extends AppCompatActivity {
@@ -40,8 +42,6 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
 
-
-
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(linearLayoutManager);
@@ -52,10 +52,15 @@ public class DashboardActivity extends AppCompatActivity {
 
     private void initView() {
 
-        for(int i = 0;i < 30;i++) {
+        for(int i = 0;i < 10;i++) {
+            Calendar c = Calendar.getInstance();
+            long time = System.currentTimeMillis();
+            c.setTimeInMillis(time);
+            Alarm a = new Alarm(c.getTime(),0);
+            c.setTimeInMillis(System.currentTimeMillis());
+            WakeEvent e = new WakeEvent(c.getTime(),c.getTime(), a);
             TimeLineModel model = new TimeLineModel();
-            model.setName("Random"+i);
-            model.setAge(i);
+            model.setName(e.getString());
             mDataList.add(model);
         }
 
