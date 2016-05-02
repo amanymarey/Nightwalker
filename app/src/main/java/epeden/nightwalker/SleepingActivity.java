@@ -8,11 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class SleepingActivity extends AppCompatActivity {
 
     private TextView phonePickupCountTextView;
+    private TextView alarmTimeTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,12 @@ public class SleepingActivity extends AppCompatActivity {
 
     public void updatePhoneCount() {
         phonePickupCountTextView = (TextView) findViewById(R.id.phonePickupCountTextView);
+        alarmTimeTextView = (TextView) findViewById(R.id.alarmTimeTextView);
+
         Alarm a = Alarm.findWithQuery(Alarm.class, "SELECT * FROM alarm ORDER BY original_start_time DESC LIMIT 1").get(0);
+        SimpleDateFormat formattedDate = new SimpleDateFormat("EEE, dd MMM hh:mm:ss a");
+        String alarmTimeText = "Alarm set for: " + formattedDate;
+        alarmTimeTextView.setText(alarmTimeText);
         long alarm_id = a.getId();
         List<WakeEvent> wakeEvents = WakeEvent.find(WakeEvent.class, "alarm = ?", Long.toString(alarm_id));
         int count;
