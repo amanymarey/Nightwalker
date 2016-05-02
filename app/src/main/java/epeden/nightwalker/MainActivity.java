@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 dashButtonPushed(v);
             }
         });
-
         start_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -150,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         Date date = new Date();
         date.setTime(time);
 
-        Alarm a = new Alarm(date,0);
+        Alarm a = new Alarm(date, 0);
         a.save();
         Intent i = new Intent(this, SleepService.class);
         startService(i);
