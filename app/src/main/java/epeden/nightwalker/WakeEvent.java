@@ -37,6 +37,6 @@ public class WakeEvent extends SugarRecord {
     }
 
     public String getString() {
-        return "Wake Event!\n\tStart time: "+startTime.toString()+" End time: "+endTime.toString()+".";
+        return "\tStart time: "+startTime.toString()+"\n\tEnd time: "+endTime.toString()+"";
     }
 }
