@@ -15,6 +15,7 @@ import android.util.FloatMath;
 import android.widget.TextView;
 
 import java.util.Calendar;
+import java.util.List;
 
 public class SleepService extends Service implements SensorEventListener {
 
@@ -31,7 +32,7 @@ public class SleepService extends Service implements SensorEventListener {
 
     public void onCreate() {
         c = Calendar.getInstance();
-        a = Alarm.findById(Alarm.class,1);
+        Alarm a = Alarm.find(Alarm.class,null,null,null,"original_start_time DESC","1").get(0);
         sm = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         acc_sensor = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         if (acc_sensor != null) {
@@ -78,7 +79,6 @@ public class SleepService extends Service implements SensorEventListener {
     }
 
     private void registerWakeEvent(){
-        Calendar c = Calendar.getInstance();
         WakeEvent wakeEvent = new WakeEvent(c.getTime(), c.getTime(), a);
 
         wakeEvent.save();
