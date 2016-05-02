@@ -48,7 +48,6 @@ public class DashboardActivity extends AppCompatActivity {
 
     }
 
-
     public void backButtonPushed(View v) {
         Intent main_intent = new Intent(this,MainActivity.class);
         startActivity(main_intent);
