@@ -12,6 +12,7 @@ import android.hardware.SensorManager;
 import android.os.IBinder;
 import android.os.SystemClock;
 import android.util.FloatMath;
+import android.widget.TextView;
 
 import java.util.Calendar;
 import java.util.List;
@@ -79,6 +80,7 @@ public class SleepService extends Service implements SensorEventListener {
 
     private void registerWakeEvent(){
         WakeEvent wakeEvent = new WakeEvent(c.getTime(), c.getTime(), a);
+
         wakeEvent.save();
     }
 
