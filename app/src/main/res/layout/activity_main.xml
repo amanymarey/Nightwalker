@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="epeden.nightwalker.MainActivity">
+    tools:context="epeden.nightwalker.MainActivity"
+    android:background="#041254">
 
     <include layout="@layout/toolbar"
         android:id="@+id/toolbar"/>
@@ -24,7 +25,11 @@
         android:id="@+id/dash_button"
         android:layout_below="@+id/timePicker"
         android:layout_alignParentStart="true"
-        android:onClick="dashButtonPushed" />
+        android:onClick="dashButtonPushed"
+        android:shadowColor="#80e1f9"
+        android:textColor="#80e1f9"
+        android:background="#0939a1"
+        android:elevation="15dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -33,7 +38,13 @@
         android:id="@+id/start_button"
         android:layout_below="@+id/timePicker"
         android:layout_alignParentEnd="true"
-        android:onClick="startAlarm" />
+        android:onClick="startAlarm"
+        android:longClickable="false"
+        android:shadowColor="#80e1f9"
+        android:singleLine="false"
+        android:background="#0e4a98"
+        android:textColor="#80e1f9"
+        android:elevation="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,7 +53,8 @@
         android:id="@+id/settingsTestTextViewLimit"
         android:layout_below="@+id/start_button"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp" />
+        android:layout_marginTop="35dp"
+        android:textColor="#80e1f9" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -51,6 +63,7 @@
         android:id="@+id/settingsTestTextViewDuration"
         android:layout_below="@+id/settingsTestTextViewLimit"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp" />
+        android:layout_marginTop="35dp"
+        android:textColor="#80e1f9" />
 
 </RelativeLayout>

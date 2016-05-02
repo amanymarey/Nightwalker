@@ -28,22 +28,24 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
-
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-        mRecyclerView.setHasFixedSize(true);
-
-        // use a linear layout manager
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
 
 
-        myDataset = new String[2];
-        myDataset[0] = "WASSUP";
-        myDataset[1] = "AGAIN";
-
-
+//        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+//
+//        // use this setting to improve performance if you know that changes
+//        // in content do not change the layout size of the RecyclerView
+//        mRecyclerView.setHasFixedSize(true);
+//
+//        // use a linear layout manager
+//        mLayoutManager = new LinearLayoutManager(this);
+//        mRecyclerView.setLayoutManager(mLayoutManager);
+//
+//
+//        myDataset = new String[2];
+//        myDataset[0] = "WASSUP";
+//        myDataset[1] = "AGAIN";
+//
+//
 
 //        mAdapter = new MyAdapter(myDataset);
 //        mRecyclerView.setAdapter(mAdapter);
@@ -54,8 +56,6 @@ public class DashboardActivity extends AppCompatActivity {
         Intent main_intent = new Intent(this,MainActivity.class);
         startActivity(main_intent);
     }
-
-
 
 //    public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 //        private String[] mDataset;

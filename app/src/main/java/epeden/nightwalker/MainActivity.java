@@ -61,11 +61,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        settings = findOrCreateSettings();
-//        settingsTestTextViewLimit = (TextView) findViewById(R.id.settingsTestTextViewLimit);
-//        settingsTestTextViewLimit.setText("Snooze Limit: " + settings.getSnoozeLimit());
-//        settingsTestTextViewDuration = (TextView) findViewById(R.id.settingsTestTextViewDuration);
-//        settingsTestTextViewDuration.setText("Snooze Duration: " + settings.getSnoozeDuration());
+        settings = findOrCreateSettings();
+        settingsTestTextViewLimit = (TextView) findViewById(R.id.settingsTestTextViewLimit);
+        settingsTestTextViewLimit.setText("Snooze Limit: " + settings.getSnoozeLimit());
+        settingsTestTextViewDuration = (TextView) findViewById(R.id.settingsTestTextViewDuration);
+        settingsTestTextViewDuration.setText("Snooze Duration: " + settings.getSnoozeDuration());
 
         // Find the toolbar view inside the activity layout
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

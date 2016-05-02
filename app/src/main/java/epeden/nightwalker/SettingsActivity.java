@@ -31,22 +31,22 @@ public class SettingsActivity extends AppCompatActivity {
                 int newSnoozeLimit = 0;
 
                 @Override
-                public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
-                    newSnoozeLimit = progresValue;
+                public void onProgressChanged(SeekBar seekBar, int progressValue, boolean fromUser) {
+                    newSnoozeLimit = progressValue;
                     settings.setSnoozeLimit(newSnoozeLimit);
                     settings.save();
-                    Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
                 public void onStartTrackingTouch(SeekBar seekBar) {
-                    Toast.makeText(getApplicationContext(), "Started tracking seekbar", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Started tracking seekbar", Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {
                     snoozeLimitTextView.setText("Covered: " + newSnoozeLimit + "/" + seekBar.getMax());
-                    Toast.makeText(getApplicationContext(), "Stopped tracking seekbar", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Stopped tracking seekbar", Toast.LENGTH_SHORT).show();
                 }
 
             });
@@ -60,18 +60,18 @@ public class SettingsActivity extends AppCompatActivity {
                     newSnoozeDuration = progresValue;
                     settings.setSnoozeDuration(newSnoozeDuration);
                     settings.save();
-                    Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
                 public void onStartTrackingTouch(SeekBar seekBar) {
-                    Toast.makeText(getApplicationContext(), "Started tracking seekbar", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Started tracking seekbar", Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {
-                    snoozeLimitTextView.setText("Covered: " + newSnoozeDuration + "/" + seekBar.getMax());
-                    Toast.makeText(getApplicationContext(), "Stopped tracking seekbar", Toast.LENGTH_SHORT).show();
+                    snoozeDurationTextView.setText("Snooze Duration: " + newSnoozeDuration + "/" + seekBar.getMax());
+//                    Toast.makeText(getApplicationContext(), "Stopped tracking seekbar", Toast.LENGTH_SHORT).show();
                 }
 
             });
