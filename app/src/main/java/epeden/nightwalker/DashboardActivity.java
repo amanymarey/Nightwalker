@@ -38,10 +38,13 @@ public class DashboardActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
+
         myDataset = new String[2];
+        myDataset[0] = "WASSUP";
+        myDataset[1] = "AGAIN";
+
         // specify an adapter (see also next example)
-        myDataset[0] = "TESTING the SHIT out OF this THING.";
-        myDataset[1] = "Hey! Watch the language!";
+
 
         mAdapter = new MyAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
@@ -63,10 +66,12 @@ public class DashboardActivity extends AppCompatActivity {
         // you provide access to all the views for a data item in a view holder
         public class ViewHolder extends RecyclerView.ViewHolder {
             // each data item is just a string in this case
+            public View mView;
             public TextView mTextView;
-            public ViewHolder(TextView v) {
+            public ViewHolder(View v) {
                 super(v);
-                mTextView = v;
+                mView = v;
+                mTextView = (TextView) findViewById(R.id.info_text);
             }
         }
 
@@ -81,9 +86,9 @@ public class DashboardActivity extends AppCompatActivity {
         public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             // create a new view
             View v = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.textview, parent, false);
+                    .inflate(R.layout.card_layout, parent, false);
             // set the view's size, margins, paddings and layout parameters
-            ViewHolder vh = new ViewHolder((TextView) v);
+            ViewHolder vh = new ViewHolder(v);
             return vh;
         }
 

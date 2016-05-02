@@ -15,10 +15,10 @@ public class Alarm extends SugarRecord {
     public Alarm(){
     }
 
-    public Alarm(Date startTime, String title, String edition){
+    public Alarm(Date startTime, int snoozeCount){
         this.originalStartTime = startTime;
         this.alarmTime = startTime;
-        this.snoozeCount = 0;
+        this.snoozeCount = snoozeCount;
     }
 
     // Get all books of this author
@@ -28,6 +28,15 @@ public class Alarm extends SugarRecord {
     }
 
     public void setAlarmTime(Date newAlarmTime){
+
         this.alarmTime = newAlarmTime;
+    }
+
+    public int getSnoozeCount() {
+        return snoozeCount;
+    }
+
+    public void snooze() {
+        snoozeCount++;
     }
 }
