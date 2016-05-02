@@ -22,7 +22,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TimePicker;
 import android.widget.Toast;
-import com.parse.ParseObject;
 
 import java.sql.Time;
 import java.util.Calendar;
