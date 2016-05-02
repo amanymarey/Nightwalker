@@ -12,7 +12,7 @@ import java.util.List;
 
 public class SleepingActivity extends AppCompatActivity {
 
-    private TextView snoozeCountTextView;
+    private TextView phonePickupCountTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +27,18 @@ public class SleepingActivity extends AppCompatActivity {
     }
 
     public void updatePhoneCount() {
-        snoozeCountTextView = (TextView) findViewById(R.id.snoozeLimitTextView);
-        Alarm a = Alarm.findWithQuery(Alarm.class, "SELECT * FROM alarm ORDERBY original_start_time DESC LIMIT 1").get(0);
+        phonePickupCountTextView = (TextView) findViewById(R.id.phonePickupCountTextView);
+        Alarm a = Alarm.findWithQuery(Alarm.class, "SELECT * FROM alarm ORDER BY original_start_time DESC LIMIT 1").get(0);
         long alarm_id = a.getId();
-        List<WakeEvent> wakeEvents = WakeEvent.find(WakeEvent.class, "alarm_id = ?", Long.toString(alarm_id));
-        int count = wakeEvents.size();
-        snoozeCountTextView.setText("You picked up your phone "+count+" times.");
-
+        List<WakeEvent> wakeEvents = WakeEvent.find(WakeEvent.class, "alarm = ?", Long.toString(alarm_id));
+        int count;
+        if(wakeEvents.size() > 0){
+            count = wakeEvents.size();
+        }
+        else {
+            count = 0;
+        }
+        String pickupCountText = "You picked up your phone "+count+" times.";
+        phonePickupCountTextView.setText(pickupCountText);
     }
 }

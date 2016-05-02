@@ -19,6 +19,8 @@ import android.widget.ToggleButton;
 
 import java.util.Calendar;
 
+import javax.xml.transform.Source;
+
 public class AlarmReceiver extends WakefulBroadcastReceiver {
 
     @Override
@@ -28,13 +30,11 @@ public class AlarmReceiver extends WakefulBroadcastReceiver {
         //this will sound the alarm tone
         //this will sound the alarm once, if you wish to
         //raise alarm in loop continuously then use MediaPlayer and setLooping(true)
-        Uri alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-        if (alarmUri == null) {
-            alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        }
-        Ringtone ringtone = RingtoneManager.getRingtone(context, alarmUri);
-        ringtone.play();
-
+        System.out.println("alarm receiver has received the broadcast, trying to start the notification activity...");
+        Intent i = new Intent();
+        i.setClassName("com.epeden", "com.epeden.nightwalker.NotificationActivity");
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
 
         //this will send a notification message
 //        ComponentName comp = new ComponentName(context.getPackageName(),
