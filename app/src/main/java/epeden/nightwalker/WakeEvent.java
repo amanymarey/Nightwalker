@@ -32,8 +32,6 @@ public class WakeEvent extends SugarRecord {
     public Date getEndTime() {
         return endTime;
     }
-
-
     public Alarm getAlarm() {
         return alarm;
     }
