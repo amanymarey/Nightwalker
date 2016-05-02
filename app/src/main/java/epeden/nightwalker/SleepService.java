@@ -32,7 +32,6 @@ public class SleepService extends Service implements SensorEventListener {
 
         nightRecord = new NightRecord();
 
-
     }
 
     @Override
