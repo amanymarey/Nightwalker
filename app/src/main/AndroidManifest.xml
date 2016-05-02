@@ -3,12 +3,12 @@
     package="epeden.nightwalker">
 
     <application
+        android:name="com.orm.SugarApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Nightwalker"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name="com.orm.SugarApp">
+        android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,8 +23,11 @@
         <service
             android:name=".SleepService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
         <receiver android:name=".AlarmReceiver" />
+
+        <activity android:name=".SleepingActivity"></activity>
     </application>
 
 </manifest>
