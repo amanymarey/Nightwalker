@@ -150,8 +150,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         c.set(Calendar.HOUR_OF_DAY, hour);
         c.set(Calendar.MINUTE, minute);
         alarmMgr.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), notificationIntent);
-
-
 //        alarmMgr.setExact(AlarmManager.RTC_WAKEUP, time, notificationIntent);
         System.out.println("CURRENT TIME:: "+c.getTimeInMillis());
 
