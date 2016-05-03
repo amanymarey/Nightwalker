@@ -36,6 +36,11 @@ public class Alarm extends SugarRecord {
         return snoozeCount;
     }
 
+    public Date getAlarmTime() {
+        return this.alarmTime;
+    }
+
+
     public void snooze() {
         snoozeCount++;
     }

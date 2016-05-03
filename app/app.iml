@@ -116,8 +116,17 @@
     <orderEntry type="library" exported="" name="recyclerview-v7-24.0.0-alpha2" level="project" />
     <orderEntry type="library" exported="" name="support-v4-24.0.0-alpha2" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-24.0.0-alpha2" level="project" />
+<<<<<<< HEAD
+    <orderEntry type="library" exported="" name="bolts-applinks-1.4.0" level="project" />
+    <orderEntry type="library" exported="" name="bolts-android-1.4.0" level="project" />
+    <orderEntry type="library" exported="" name="sugar-1.5" level="project" />
+    <orderEntry type="library" exported="" name="timelineview-1.0.2" level="project" />
+    <orderEntry type="library" exported="" name="appcompat-v7-23.1.1" level="project" />
+    <orderEntry type="library" exported="" name="cardview-v7-23.3.0" level="project" />
+=======
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-core-1.3" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />
     <orderEntry type="library" exported="" name="bolts-android-1.4.0" level="project" />
+>>>>>>> 5afd0168bec3bb5cf2224dbaa58adc030ee1b49d
   </component>
 </module>

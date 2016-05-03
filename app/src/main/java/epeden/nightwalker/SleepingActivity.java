@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class SleepingActivity extends AppCompatActivity {
@@ -33,7 +34,11 @@ public class SleepingActivity extends AppCompatActivity {
         alarmTimeTextView = (TextView) findViewById(R.id.alarmTimeTextView);
 
         Alarm a = Alarm.findWithQuery(Alarm.class, "SELECT * FROM alarm ORDER BY original_start_time DESC LIMIT 1").get(0);
-        SimpleDateFormat formattedDate = new SimpleDateFormat("EEE, dd MMM hh:mm:ss a");
+        Date alarmStartDate = a.getAlarmTime();
+
+        SimpleDateFormat df = new SimpleDateFormat("EEE, dd MMM hh:mm a");
+        String formattedDate = df.format(alarmStartDate);
+
         String alarmTimeText = "Alarm set for: " + formattedDate;
         alarmTimeTextView.setText(alarmTimeText);
         long alarm_id = a.getId();
