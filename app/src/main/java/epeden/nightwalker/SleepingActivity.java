@@ -1,5 +1,7 @@
 package epeden.nightwalker;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -12,19 +14,28 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-public class SleepingActivity extends AppCompatActivity {
+public class SleepingActivity extends AppCompatActivity  {
 
     private TextView phonePickupCountTextView;
     private TextView alarmTimeTextView;
+    private AlarmManager alarmMgr;
+    private PendingIntent alarmIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sleeping);
         updatePhoneCount();
+        alarmMgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
     }
 
     public void backButtonPushed(View v) {
+
+        // Turn off alarm
+        AlarmManager.AlarmClockInfo alarmClockInfo = alarmMgr.getNextAlarmClock();
+        PendingIntent i =  alarmClockInfo.getShowIntent();
+        alarmMgr.cancel(i);
+
         Intent main_intent = new Intent(this,MainActivity.class);
         startActivity(main_intent);
     }
