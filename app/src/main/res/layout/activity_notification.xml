@@ -24,7 +24,7 @@
             android:id="@+id/button"
             android:layout_weight="0.50"
             android:textColor="#f7f4f4"
-            android:background="#053459"
+            android:background="#030e41"
             android:singleLine="true"
             android:nestedScrollingEnabled="false"
             android:onClick="dismissPressed" />
@@ -37,7 +37,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.50"
             android:textColor="#fcfafa"
-            android:background="#053459"
+            android:background="#030e41"
             android:onClick="snoozePressed" />
     </LinearLayout>
 </RelativeLayout>

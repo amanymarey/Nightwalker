@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="epeden.nightwalker.DashboardActivity">
+    tools:context="epeden.nightwalker.DashboardActivity"
+    android:background="#030e41">
 
     <include layout="@layout/toolbar"
         android:id="@+id/toolbar"/>
@@ -24,10 +25,11 @@
         android:minHeight="30dp"
         android:minWidth="60dp"
         android:layout_alignParentTop="true"
-        android:background="#f1e956"
+        android:background="#030e41"
         android:clickable="true"
         android:textSize="20dp"
-        android:onClick="backButtonPushed" />
+        android:onClick="backButtonPushed"
+        android:textColor="#96caf4" />
 
 
     <TextView

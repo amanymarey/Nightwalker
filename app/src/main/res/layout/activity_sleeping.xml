@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="epeden.nightwalker.SleepingActivity"
-    android:background="#060f4c">
+    android:background="#030e41">
 
     <TextClock
         android:layout_width="wrap_content"
@@ -28,7 +28,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp"
-        android:background="#11286e"
+        android:background="#08336b"
         android:textColor="#def6fb"
         android:nestedScrollingEnabled="false"
         android:onClick="backButtonPushed" />

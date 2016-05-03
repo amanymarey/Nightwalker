@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class NotificationActivity extends AppCompatActivity {
@@ -45,13 +46,18 @@ public class NotificationActivity extends AppCompatActivity {
         alarmIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
 
         // set new alarm (9 minutes later) with alarmManager
-        int time = 60000*9;
-        alarmMgr.setExact(AlarmManager.RTC_WAKEUP, time, alarmIntent);
+//        int time = 60000*9;
+//        alarmMgr.setExact(AlarmManager.RTC_WAKEUP, time, alarmIntent);
 
+
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.HOUR_OF_DAY, 0);
+        c.set(Calendar.MINUTE, 9);
+        alarmMgr.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), alarmIntent);
         // set time to current time of day + snooze time
-        time = time + (int) System.currentTimeMillis();
+
         Date date = new Date();
-        date.setTime(time);
+        date.setTime(c.getTimeInMillis());
 
         // find current alarm, snooze, and update time
         Alarm a = Alarm.findById(Alarm.class, 1);

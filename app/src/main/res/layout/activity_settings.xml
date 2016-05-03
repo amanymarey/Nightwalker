@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="epeden.nightwalker.SettingsActivity">
+    tools:context="epeden.nightwalker.SettingsActivity"
+    android:background="#030e41">
 
     <include
         android:id="@+id/toolbar"
@@ -33,7 +34,9 @@
         android:text="Set Maximum Number of Snoozes"
         android:id="@+id/snoozeLimitTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp" />
+        android:layout_marginBottom="32dp"
+        android:textColor="#aad0fc"
+        android:layout_marginTop="30dp" />
 
     <SeekBar
         android:layout_width="200dp"
@@ -42,7 +45,8 @@
         android:layout_below="@+id/snoozeLimitTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
-        android:max="5"/>
+        android:max="5"
+        android:background="#aad0fc" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -51,7 +55,9 @@
         android:text="Set Snooze Time"
         android:id="@+id/snoozeDurationTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp" />
+        android:layout_marginBottom="32dp"
+        android:textColor="#aad0fc"
+        android:layout_marginTop="30dp" />
 
     <SeekBar
         android:layout_width="200dp"
@@ -60,7 +66,8 @@
         android:layout_below="@+id/snoozeDurationTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
-        android:max="5"/>
+        android:max="5"
+        android:background="#aad0fc" />
 
 
 

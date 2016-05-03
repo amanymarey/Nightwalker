@@ -27,7 +27,11 @@ dependencies {
     compile 'com.parse.bolts:bolts-android:1.+'
     compile 'com.android.support:recyclerview-v7:23.3.0'
     compile 'com.android.support:cardview-v7:23.3.0'
+<<<<<<< HEAD
     compile 'com.github.satyan:sugar:1.5'
+=======
+>>>>>>> 5afd0168bec3bb5cf2224dbaa58adc030ee1b49d
     compile 'com.android.support:recyclerview-v7:+'
     compile 'com.github.vipulasri:timelineview:1.0.2'
+    compile 'com.github.satyan:sugar:1.5'
 }
