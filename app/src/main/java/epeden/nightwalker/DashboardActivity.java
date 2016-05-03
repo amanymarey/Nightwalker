@@ -67,8 +67,9 @@ public class DashboardActivity extends AppCompatActivity {
 
         SimpleDateFormat df = new SimpleDateFormat("EEEE MM/dd");
         String formattedDate = df.format(c.getTime());
-
+        formattedDate = "\t\t\t"+formattedDate;
         getSupportActionBar().setTitle(formattedDate);
+
 //        getSupportActionBar().setSubtitle(formattedDate);
 
         String s = "Pickup Count: "+count+"";

@@ -29,7 +29,8 @@
         android:clickable="true"
         android:textSize="20dp"
         android:onClick="backButtonPushed"
-        android:textColor="#96caf4" />
+        android:textColor="#96caf4"
+        android:layout_marginTop="10dp" />
 
 
     <TextView
@@ -40,7 +41,7 @@
         android:id="@+id/dashboard_info"
         android:layout_below="@+id/toolbar"
         android:layout_centerHorizontal="true"
-        android:textColor="#e23f3f"
+        android:textColor="#9bd0fb"
         android:textStyle="bold" />
 
     <include layout="@layout/timeline_main"

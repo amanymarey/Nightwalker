@@ -16,12 +16,15 @@
     android:paddingRight="10dp"
     app:marker_size="25dp"
     app:line_size="2dp"
-    app:line="@color/colorPrimary"/>
+    app:line="@color/colorPrimary"
+    android:background="#08336b" />
 
 <android.support.v7.widget.CardView
 android:layout_width="300dp"
 android:layout_height="50dp"
-android:layout_gravity="center_vertical">
+android:layout_gravity="center_vertical"
+    android:background="#08336b"
+    android:backgroundTint="#08336b">
 
 <TextView
     android:id="@+id/tx_name"

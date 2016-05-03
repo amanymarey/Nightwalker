@@ -16,7 +16,7 @@ import java.util.Date;
 
 public class NotificationActivity extends AppCompatActivity {
 
-
+    private Ringtone ringtone;
     private AlarmManager alarmMgr;
     private PendingIntent alarmIntent;
 
@@ -31,7 +31,7 @@ public class NotificationActivity extends AppCompatActivity {
         if (alarmUri == null) {
             alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         }
-        Ringtone ringtone = RingtoneManager.getRingtone(this, alarmUri);
+        ringtone = RingtoneManager.getRingtone(this, alarmUri);
         ringtone.play();
 
 
@@ -39,9 +39,11 @@ public class NotificationActivity extends AppCompatActivity {
 
     public void dismissPressed(View v) {
         Intent main_intent = new Intent(this,MainActivity.class);
+        ringtone.stop();
         startActivity(main_intent);
     }
     public void snoozePressed(View v) {
+        ringtone.stop();
         Intent intent = new Intent(this, NotificationActivity.class);
         alarmIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
 
