@@ -58,10 +58,10 @@ public class NotificationActivity extends AppCompatActivity {
         a.snooze();
         a.setAlarmTime(date);
 
-        // start sleepactivity service
+        // start sleepactivity service and sleeping activity
         Intent i = new Intent(this, SleepService.class);
         startService(i);
-        Intent i2 = new Intent(this, MainActivity.class);
+        Intent i2 = new Intent(this, SleepingActivity.class);
         startActivity(i2);
     }
 

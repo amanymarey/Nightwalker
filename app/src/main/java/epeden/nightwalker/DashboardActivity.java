@@ -57,9 +57,9 @@ public class DashboardActivity extends AppCompatActivity {
 
         dashboardInfo = (TextView) findViewById(R.id.dashboard_info);
 
-        Alarm a = Alarm.findWithQuery(Alarm.class, "SELECT * FROM alarm ORDERBY original_start_time DESC LIMIT 1").get(0);
+        Alarm a = Alarm.findWithQuery(Alarm.class, "SELECT * FROM alarm ORDER BY original_start_time DESC LIMIT 1").get(0);
         long alarm_id = a.getId();
-        List<WakeEvent> wakeEvents = WakeEvent.find(WakeEvent.class, "alarm_id = ?", Long.toString(alarm_id));
+        List<WakeEvent> wakeEvents = WakeEvent.find(WakeEvent.class, "alarm = ?", Long.toString(alarm_id));
         int count = wakeEvents.size();
 
         Calendar c = Calendar.getInstance();
