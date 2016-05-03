@@ -4,7 +4,6 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#091c75"
-    app:theme="@style/ThemeOverlay.AppCompat.Dark"
-    android:backgroundTint="">
+    app:theme="@style/ThemeOverlay.AppCompat.Dark">
 
 </android.support.v7.widget.Toolbar>
