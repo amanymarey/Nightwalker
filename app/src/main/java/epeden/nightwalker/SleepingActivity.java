@@ -31,13 +31,7 @@ public class SleepingActivity extends AppCompatActivity  {
 
     public void backButtonPushed(View v) {
 
-        // Turn off alarm
-        AlarmManager.AlarmClockInfo alarmClockInfo = alarmMgr.getNextAlarmClock();
-        PendingIntent i =  alarmClockInfo.getShowIntent();
-        alarmMgr.cancel(i);
 
-        Intent main_intent = new Intent(this,MainActivity.class);
-        startActivity(main_intent);
     }
 
     public void updatePhoneCount() {
@@ -63,5 +57,15 @@ public class SleepingActivity extends AppCompatActivity  {
         }
         String pickupCountText = "You picked up your phone "+count+" times.";
         phonePickupCountTextView.setText(pickupCountText);
+    }
+
+    public void dismissPushed(View v) {
+        // Turn off alarm
+        AlarmManager.AlarmClockInfo alarmClockInfo = alarmMgr.getNextAlarmClock();
+        PendingIntent i =  alarmClockInfo.getShowIntent();
+        alarmMgr.cancel(i);
+
+        Intent main_intent = new Intent(this,MainActivity.class);
+        startActivity(main_intent);
     }
 }
