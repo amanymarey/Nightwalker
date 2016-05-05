@@ -42,7 +42,7 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-
+        // Recycler view for TimelineView
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(linearLayoutManager);
@@ -53,26 +53,25 @@ public class DashboardActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-
-
-        dashboardInfo = (TextView) findViewById(R.id.dashboard_info);
-
+        // Find most recent alarm
         Alarm a = Alarm.findWithQuery(Alarm.class, "SELECT * FROM alarm ORDER BY original_start_time DESC LIMIT 1").get(0);
         long alarm_id = a.getId();
+        // Get list of WakeEvents based on alarm ID
         List<WakeEvent> wakeEvents = WakeEvent.find(WakeEvent.class, "alarm = ?", Long.toString(alarm_id));
-        int count = wakeEvents.size();
 
         Calendar c = Calendar.getInstance();
         System.out.println("Current time => " + c.getTime());
 
+        // Display current date in the toolbar
         SimpleDateFormat df = new SimpleDateFormat("EEEE MM/dd");
         String formattedDate = df.format(c.getTime());
         formattedDate = "\t\t\t"+formattedDate;
         getSupportActionBar().setTitle(formattedDate);
 
-//        getSupportActionBar().setSubtitle(formattedDate);
-
+        // Update pickup count
+        int count = wakeEvents.size();
         String s = "Pickup Count: "+count+"";
+        dashboardInfo = (TextView) findViewById(R.id.dashboard_info);
         dashboardInfo.setText(s);
 
         initView();
@@ -83,15 +82,15 @@ public class DashboardActivity extends AppCompatActivity {
         Calendar c = Calendar.getInstance();
         long time = System.currentTimeMillis();
         c.setTimeInMillis(time);
-        Alarm a = new Alarm(c.getTime(),0);
 
-        for(int i = 0;i < 10;i++) {
-            c.setTimeInMillis(System.currentTimeMillis());
-            WakeEvent e = new WakeEvent(c.getTime(),c.getTime(), a);
-            TimeLineModel model = new TimeLineModel();
-            model.setName(e.getString());
-            mDataList.add(model);
-        }
+//        Alarm a = new Alarm(c.getTime(),0);
+//        for(int i = 0;i < 10;i++) {
+//            c.setTimeInMillis(System.currentTimeMillis());
+//            WakeEvent e = new WakeEvent(c.getTime(),c.getTime(), a);
+//            TimeLineModel model = new TimeLineModel();
+//            model.setName(e.getString());
+//            mDataList.add(model);
+//        }
 
         mTimeLineAdapter = new TimeLineAdapter(mDataList);
         mRecyclerView.setAdapter(mTimeLineAdapter);

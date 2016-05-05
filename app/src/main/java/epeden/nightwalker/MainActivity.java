@@ -86,10 +86,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             sm.registerListener(this, acc_sensor, 1000000);
         }
 
-
         alarmMgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
         time_picker = (TimePicker) findViewById(R.id.timePicker);
-
 
 
         Button dash_button = (Button) findViewById(R.id.dash_button);
@@ -141,30 +139,28 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     public void startAlarm(View view) {
-        int hour = time_picker.getHour();
-        int minute = time_picker.getMinute();
-        Intent intent = new Intent(MainActivity.this, AlarmReceiver.class);
-        notificationIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
-
+        // Set Calendar time for Alarm Manager and set Date time for current Alarm object
         Calendar c = Calendar.getInstance();
-        c.set(Calendar.HOUR_OF_DAY, hour);
-        c.set(Calendar.MINUTE, minute);
-        alarmMgr.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), notificationIntent);
-//        alarmMgr.setExact(AlarmManager.RTC_WAKEUP, time, notificationIntent);
-        System.out.println("CURRENT TIME:: "+c.getTimeInMillis());
-
-
+        c.set(Calendar.HOUR_OF_DAY, time_picker.getHour());
+        c.set(Calendar.MINUTE, time_picker.getMinute());
         Date date = new Date();
         date.setTime(c.getTimeInMillis());
 
+        // Intents for alarm
+        Intent intent = new Intent(MainActivity.this, AlarmReceiver.class);
+        notificationIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
+        // Set alarm
+        alarmMgr.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), notificationIntent);
+
+        // Create new Alarm object and save to database
         Alarm a = new Alarm(date, 0);
         a.save();
+
+        // Start Sleep Service and Sleeping Activity
         Intent i = new Intent(this, SleepService.class);
         startService(i);
-
         Intent i2 = new Intent(this, SleepingActivity.class);
         startActivity(i2);
-        
     }
 
 
