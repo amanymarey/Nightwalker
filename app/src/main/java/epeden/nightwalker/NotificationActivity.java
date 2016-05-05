@@ -39,6 +39,10 @@ public class NotificationActivity extends AppCompatActivity {
     }
 
     public void dismissPressed(View v) {
+        AlarmManager.AlarmClockInfo alarmClockInfo = alarmMgr.getNextAlarmClock();
+        PendingIntent i =  alarmClockInfo.getShowIntent();
+        alarmMgr.cancel(i);
+        
         Intent main_intent = new Intent(this,MainActivity.class);
         ringtone.stop();
         startActivity(main_intent);
