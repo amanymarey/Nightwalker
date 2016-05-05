@@ -59,6 +59,9 @@ public class DashboardActivity extends AppCompatActivity {
         // Get list of WakeEvents based on alarm ID
         List<WakeEvent> wakeEvents = WakeEvent.find(WakeEvent.class, "alarm = ?", Long.toString(alarm_id));
 
+        // Remove last activity for non-terminating WakeEvent
+        wakeEvents.remove(wakeEvents.size() - 1);
+
         Calendar c = Calendar.getInstance();
         System.out.println("Current time => " + c.getTime());
 
