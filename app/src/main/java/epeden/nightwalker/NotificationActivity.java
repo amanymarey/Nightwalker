@@ -39,18 +39,11 @@ public class NotificationActivity extends AppCompatActivity {
     }
 
     public void dismissPressed(View v) {
-        AlarmManager.AlarmClockInfo alarmClockInfo = alarmMgr.getNextAlarmClock();
-        PendingIntent i =  alarmClockInfo.getShowIntent();
-        alarmMgr.cancel(i);
-
         Intent main_intent = new Intent(this,MainActivity.class);
         ringtone.stop();
         startActivity(main_intent);
     }
     public void snoozePressed(View v) {
-        AlarmManager.AlarmClockInfo alarmClockInfo = alarmMgr.getNextAlarmClock();
-        PendingIntent pi =  alarmClockInfo.getShowIntent();
-        alarmMgr.cancel(pi);
 
         // Compare current snooze count with the snooze limit from settings
         Alarm a = Alarm.findById(Alarm.class, 1);
