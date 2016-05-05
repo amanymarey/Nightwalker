@@ -27,47 +27,105 @@
         android:textSize="20dp"
         android:onClick="backButtonPushed" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        android:text="Set Maximum Number of Snoozes"
-        android:id="@+id/snoozeLimitTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:textColor="#aad0fc"
-        android:layout_marginTop="30dp" />
 
-    <SeekBar
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/snoozeLimitSeekBar"
-        android:layout_below="@+id/snoozeLimitTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
-        android:max="5"
-        android:background="#aad0fc" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/snoozeLimitSeekBar"
-        android:text="Set Snooze Time"
-        android:id="@+id/snoozeDurationTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:textColor="#aad0fc"
-        android:layout_marginTop="30dp" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rsv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
 
-    <SeekBar
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/snoozeDurationSeekBar"
-        android:layout_below="@+id/snoozeDurationTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
-        android:max="5"
-        android:background="#aad0fc" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:text="Set Maximum Number of Snoozes"
+            android:id="@+id/snoozeLimitTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="32dp"
+            android:textColor="#aad0fc"
+            android:layout_marginTop="30dp" />
+
+
+        <com.github.channguyen.rsv.RangeSliderView
+            android:id="@+id/snoozeLimitRangeSlider"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            rsv:filledColor="#1A5F77"
+            rsv:rangeCount="5"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/snoozeLimitRangeSlider"
+            android:text="Set Snooze Time"
+            android:id="@+id/snoozeDurationTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="32dp"
+            android:textColor="#aad0fc"
+            android:layout_marginTop="30dp" />
+
+        <com.github.channguyen.rsv.RangeSliderView
+            android:id="@+id/snoozeDurationRangeSlider"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            rsv:filledColor="#FF6600"
+            rsv:rangeCount="5"
+
+            />
+
+    </LinearLayout>
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/toolbar"-->
+        <!--android:text="Set Maximum Number of Snoozes"-->
+        <!--android:id="@+id/snoozeLimitTextView"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="32dp"-->
+        <!--android:textColor="#aad0fc"-->
+        <!--android:layout_marginTop="30dp" />-->
+
+    <!--<SeekBar-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/snoozeLimitSeekBar"-->
+        <!--android:layout_below="@+id/snoozeLimitTextView"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="12dp"-->
+        <!--android:max="5"-->
+        <!--android:background="#aad0fc" />-->
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/snoozeLimitSeekBar"-->
+        <!--android:text="Set Snooze Time"-->
+        <!--android:id="@+id/snoozeDurationTextView"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="32dp"-->
+        <!--android:textColor="#aad0fc"-->
+        <!--android:layout_marginTop="30dp" />-->
+
+    <!--<SeekBar-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/snoozeDurationSeekBar"-->
+        <!--android:layout_below="@+id/snoozeDurationTextView"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="12dp"-->
+        <!--android:max="5"-->
+        <!--android:background="#aad0fc" />-->
 
 
 
