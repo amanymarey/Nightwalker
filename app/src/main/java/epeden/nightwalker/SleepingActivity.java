@@ -29,11 +29,6 @@ public class SleepingActivity extends AppCompatActivity  {
         alarmMgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
     }
 
-    public void backButtonPushed(View v) {
-
-
-    }
-
     public void updatePhoneCount() {
         phonePickupCountTextView = (TextView) findViewById(R.id.phonePickupCountTextView);
         alarmTimeTextView = (TextView) findViewById(R.id.alarmTimeTextView);
