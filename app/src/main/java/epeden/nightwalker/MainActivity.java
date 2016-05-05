@@ -24,6 +24,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import com.github.channguyen.rsv.RangeSliderView;
+
 import org.w3c.dom.Text;
 
 import java.sql.SQLOutput;
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public Settings settings;
     private TextView settingsTestTextViewLimit;
     private TextView settingsTestTextViewDuration;
-
+    
 
     public static MainActivity instance() {
         return inst;
@@ -106,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 startAlarm(v);
             }
         });
+
 
     }
 

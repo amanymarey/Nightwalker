@@ -30,4 +30,5 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:+'
     compile 'com.github.vipulasri:timelineview:1.0.2'
     compile 'com.github.satyan:sugar:1.5'
+    compile 'com.github.channguyen:rsv:1.0.1'
 }
