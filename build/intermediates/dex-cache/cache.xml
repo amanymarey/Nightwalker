@@ -1,2 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_ea7325f071e5f9c03e9d3d150f1b972db16d7672.jar" />
+    </item>
+    <item
+        jar="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="82ce13fd19cdfde0e392f03c27edeba8d4333648">
+        <dex dex="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-23.3.0_b3a2a781b3920a473ca3339fec8a67dfc6216392.jar" />
+    </item>
+    <item
+        jar="/Users/epeden2/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_319eb1c644b2fda58a1218e016a34448cc2293d2.jar" />
+    </item>
+    <item
+        jar="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0-alpha2/jars/libs/internal_impl-24.0.0-alpha2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="e460bc069dfd21d22770cf2a2370c9021b9c98a2">
+        <dex dex="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0-alpha2_6afff6900eb0c8377882cf3ed73dec9bce791a15.jar" />
+    </item>
+    <item
+        jar="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0-alpha2/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="32ab8bede8cd600f25a5bb3fe15068c81c8910dc">
+        <dex dex="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0-alpha2_9b1bee74f1eb354e49f54a64deebe52841ee22eb.jar" />
+    </item>
+    <item
+        jar="/Users/epeden2/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0_d40ede5ea0f7152d6cc5db4d7db92d5e8a3cdf18.jar" />
+    </item>
+    <item
+        jar="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.0.0-alpha2/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="2f417d93e1f62fd4fb4a2c0f3a4a882dd0ca7843">
+        <dex dex="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-24.0.0-alpha2_7c306c839a6ea4ba144a911409b0412b5352e15f.jar" />
+    </item>
+    <item
+        jar="/Users/epeden2/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0-alpha2/support-annotations-24.0.0-alpha2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8071e1e6cd07e9253720313d6c14286a7ee424e0">
+        <dex dex="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0-alpha2_2f4993e65f40753f9823c3f9e39c5ce50eadf3a4.jar" />
+    </item>
+    <item
+        jar="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/exploded-aar/com.github.satyan/sugar/1.5/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="19a40a8afe0289f6520b25353096ac233e78f69d">
+        <dex dex="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/pre-dexed/debug/com.github.satyan-sugar-1.5_76e8750d6169f0f4667dec88b7f96caeed237bf5.jar" />
+    </item>
+    <item
+        jar="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/exploded-aar/com.github.vipulasri/timelineview/1.0.2/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ca9c45ec1e6fea3d8ec964f37f825789b1c4faeb">
+        <dex dex="/Users/epeden2/AndroidStudioProjects/Nightwalker/app/build/intermediates/pre-dexed/debug/com.github.vipulasri-timelineview-1.0.2_025f6e319a5b7a11779cff1ca6f3aa5991196716.jar" />
+    </item>
+
+</items>

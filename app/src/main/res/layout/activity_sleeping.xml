@@ -31,7 +31,7 @@
         android:background="#08336b"
         android:textColor="#def6fb"
         android:nestedScrollingEnabled="false"
-        android:onClick="backButtonPushed" />
+        android:onClick="dismissPushed" />
 
     <TextView
         android:layout_width="wrap_content"
